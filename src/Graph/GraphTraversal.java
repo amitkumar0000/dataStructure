@@ -14,29 +14,6 @@ public class GraphTraversal {
 
     public void bfsTraversal(Graph graph){
         System.out.println("======BFS Traversal=====");
-        /*
-        Queue<LinkedList<Integer>> queue = new LinkedList<>();
-        
-        for(int i=0; i<graph.getV(); i++)
-            queue.add(graph.adjlist[i]);
-
-        while(!queue.isEmpty()){
-            LinkedList<Integer>  vertex = queue.poll();
-            for(int i=0; i < vertex.size(); i++) {
-                if (!isBfsVisited.contains(vertex.get(i))) {
-                    isBfsVisited.add(vertex.get(i));
-                    System.out.print(vertex.get(i) + " ");
-                }
-            }
-        }
-        
-        for(int i = 0; i<graph.getV(); i++){
-            if (!isBfsVisited.contains(i)) {
-                isBfsVisited.add(i);
-                System.out.print(i + " ");
-            }
-        }*/
-
         Set<Long> visited =  new HashSet<>();
         Queue<Graph.Vertex> q = new LinkedList<>();
         for(Graph.Vertex vertex: graph.getAllVertex()){
@@ -56,12 +33,35 @@ public class GraphTraversal {
                 }
             }
         }
-
-
     }
 
-    public void dfsTraversal(GraphBasicStructure graphBasicStructure){
+    public void dfsTraversal(Graph graph){
         System.out.println("\n======DFS Traversal=====");
+        Set<Long> visited = new HashSet<>();
+        Stack<Graph.Vertex> s = new Stack<>();
+
+        for(Graph.Vertex vertex : graph.getAllVertex()){
+            if(!visited.contains(vertex.getId())){
+                s.push(vertex);
+                while(!s.isEmpty()){
+                    boolean isAllVisited = false;
+                    Graph.Vertex vs = s.peek();
+                    if(!visited.contains(vs.getId())){
+                        visited.add(vs.getId());
+                        System.out.print(vs.getId()+ " ");
+                    }
+                    for(Graph.Vertex v: vs.getAdjacentVertex()){
+                        if(!visited.contains(v.getId())){
+                            s.push(v);
+                            isAllVisited = true;
+                        }
+                    }
+                    if(!isAllVisited){
+                        s.pop();
+                    }
+                }
+            }
+        }
 
     }
 }
