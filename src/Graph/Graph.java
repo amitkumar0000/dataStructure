@@ -1,85 +1,87 @@
 package Graph;
 
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Graph {
-    int V;
-    LinkedList<Integer> adjlist[];
-    int adjMatrix[][];
 
-    public Graph(Integer V){
-        this.V = V;
+    class Vertex{
+        private long id;
+        private List<Vertex> adjacentVertex;
+        private List<Edge> edges;
 
-        initAdjList();
+        public Vertex(long id){
+            this.id = id;
+            adjacentVertex = new ArrayList<>();
+            edges = new ArrayList<>();
+        }
 
-        initAdjMatx();
-    }
+        public void addAdjacentVertex(Edge edge , Vertex vertex){
+            edges.add(edge);
+            adjacentVertex.add(vertex);
+        }
 
+        public long getId() {
+            return id;
+        }
 
-    private void initAdjList() {
-        adjlist = new LinkedList[V];
-
-        for(int i=0; i<V; i++){
-            adjlist[i] = new LinkedList<>();
+        public List<Vertex> getAdjacentVertex() {
+            return adjacentVertex;
         }
     }
 
-    private void initAdjMatx() {
-        adjMatrix = new int[V][V];
-    }
+    class Edge{
+        Vertex vertex1;
+        Vertex vertex2;
+        int weight;
+        boolean isDirected;
 
-    //Add an Edge to undirected Graph
-    public void addEdge(int src, int dest){
-        addEdgeToList(src,dest);
-        addEdgeToMatrix(src,dest);
-    }
-
-
-    private void addEdgeToList(int src, int dest) {
-        adjlist[src].addLast(dest);
-        adjlist[dest].addLast(src);
-    }
-
-    private void addEdgeToMatrix(int src, int dest) {
-        adjMatrix[src][dest] = 1;
-        adjMatrix[dest][src] = 1;
-    }
-
-
-
-    public void printGraph(){
-        printAdjList();
-        printAdjMatx();
-    }
-
-    private void printAdjList() {
-        System.out.println("=========Adjacency list=====");
-        for(int i=0; i < V; i++){
-            System.out.println("vertex:: "+ i);
-            for(Integer ele : adjlist[i]){
-                System.out.print(ele + " ");
-            }
-            System.out.println();
+        public Edge(Vertex vertex1, Vertex vertex2, boolean isDirected, int weight) {
+            this.vertex1 = vertex1;
+            this.vertex2 = vertex2;
+            this.isDirected =isDirected;
+            this.weight = weight;
         }
     }
 
-    private void printAdjMatx() {
-        System.out.println("=========Adjacency Matrix=====");
-        for(int i=0; i<V; i++){
-            System.out.println("Vertex:: "+ i);
-            for(int j=0; j<V; j++){
-                if(adjMatrix[i][j] == 1){
-                    System.out.print(j+" ");
-                }
-            }
-            System.out.println();
-        }
+    List<Edge> allEdges;
+    Map<Long, Vertex> allVertex;
+    boolean isDirected;
 
+    public Graph(boolean isDirected){
+        allEdges = new ArrayList<>();
+        allVertex = new HashMap<>();
+        this.isDirected = isDirected;
     }
 
+    public void addEdge(long id1,long id2){
+        addEdge(id1,id2,0);
+    }
 
+    private void addEdge(long id1,long id2, int weight){
+        Vertex vertex1 = null;
+        if(allVertex.containsKey(id1)){
+            vertex1 = allVertex.get(id1);
+        }else{
+            vertex1 = new Vertex(id1);
+            allVertex.put(id1,vertex1);
+        }
+        Vertex vertex2 = null;
+        if(allVertex.containsKey(id2)){
+            vertex2 = allVertex.get(id2);
+        }else{
+            vertex2 = new Vertex(id2);
+            allVertex.put(id2,vertex2);
+        }
 
+        Edge edge = new Edge(vertex1,vertex2,isDirected,weight);
+
+        vertex1.addAdjacentVertex(edge,vertex2);
+        if(!isDirected){
+            vertex2.addAdjacentVertex(edge,vertex1);
+        }
+    }
+
+    public Collection<Vertex> getAllVertex() {
+        return allVertex.values();
+    }
 }
