@@ -4,14 +4,6 @@ import java.util.*;
 
 public class GraphTraversal {
 
-    Set<Integer> isBfsVisited;
-    Set<Integer> isDfsVisited;
-
-    public GraphTraversal(){
-        isBfsVisited = new HashSet<>();
-        isDfsVisited = new HashSet<>();
-    }
-
     public void bfsTraversal(Graph graph){
         System.out.println("======BFS Traversal=====");
         Set<Long> visited =  new HashSet<>();
