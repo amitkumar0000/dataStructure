@@ -1,8 +1,9 @@
 import Array.LargestSumContNum;
 import Array.LengthofNonRepeatedNum;
 import Array.StockSellBuy;
-import DynamicProgramming.CoinChangeProblem;
-import DynamicProgramming.SubSetSum;
+import DP.CoinChangeProblem;
+import DP.SubSetSum;
+import DP.knapsack0_1_Problem;
 import Graph.GraphTraversal;
 import Graph.Graph;
 
@@ -30,11 +31,21 @@ public class Main {
                 +coinChangeProblem.minNumOfCoins(3,5));
 
 
+        //2. SubSet Problem
+        // For given array is there subset preset with sum equal to given sum
         SubSetSum setSum = new SubSetSum();
-        int num[] = {1,2,7};
-        int sum = 9;
-        System.out.println("is subset equal "+ sum  +" using {1,2,7}  :: "
+        int num[] = {2,3,7,8,10};
+        int sum = 21;
+        System.out.println("is subset equal "+ sum  +" using {2,3,7,8,10}  :: "
                 +setSum.isSubsetSum(num,sum));
+
+        //3. 0/1 Knapsack problem
+        knapsack0_1_Problem knapsack01Problem = new knapsack0_1_Problem();
+        int wt[] = {0,1,2,4,5};
+        int[] val = {0,-100,40,5,-700};
+
+        System.out.println("Max value using wt{1,3,4,5} and value{1,4,5,7} " +
+                "that can make a max weight 7 is "+ knapsack01Problem.maxValue(wt,val,7));
     }
 
     private static void arrayOperation() {
