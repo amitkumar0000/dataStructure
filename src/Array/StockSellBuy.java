@@ -23,4 +23,20 @@ public class StockSellBuy {
             maxProfit = sell - buy;
         return maxProfit;
     }
+
+    public int getMaxProfifSellingOnce(int a[]){
+       int minPrice = a[0];
+       int maxProfit = 0;
+
+        for(int i = 1 ; i< a.length; i++){
+           if(a[i] - minPrice > maxProfit)
+               maxProfit = a[i] - minPrice;
+           if(minPrice > a[i])
+               minPrice = a[i];
+        }
+
+        return maxProfit;
+    }
+
+
 }

@@ -1,6 +1,8 @@
 import Array.LargestSumContNum;
 import Array.LengthofNonRepeatedNum;
 import Array.StockSellBuy;
+import DynamicProgramming.CoinChangeProblem;
+import DynamicProgramming.SubSetSum;
 import Graph.GraphTraversal;
 import Graph.Graph;
 
@@ -12,9 +14,27 @@ public class Main {
         System.out.println("Hello World!");
 
 
-        arrayOperation();
+//        arrayOperation();
 //        graphOperation();
+        dpOperation();
 
+    }
+
+    private static void dpOperation() {
+
+        //1. Coin Change Problem
+        // Number of making a sum by using given set of coins.
+        // Each coin is given infitnit number of times.
+        CoinChangeProblem coinChangeProblem = new CoinChangeProblem();
+        System.out.println("Num of way to making "+5 +" using {1,2,3} infinite num each :: "
+                +coinChangeProblem.minNumOfCoins(3,5));
+
+
+        SubSetSum setSum = new SubSetSum();
+        int num[] = {1,2,7};
+        int sum = 9;
+        System.out.println("is subset equal "+ sum  +" using {1,2,7}  :: "
+                +setSum.isSubsetSum(num,sum));
     }
 
     private static void arrayOperation() {
@@ -37,6 +57,9 @@ public class Main {
         int e[] = {100,200,400,300,500,40, 800};
         StockSellBuy sellBuy = new StockSellBuy();
         System.out.println("Length of largest non repeated num:: "+ sellBuy.getMaxProfitBuySellOnce(e));
+
+        System.out.println("Length of largest non repeated num:: "+ sellBuy.getMaxProfifSellingOnce(e));
+
 
     }
 
