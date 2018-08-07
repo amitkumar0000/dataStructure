@@ -1,6 +1,4 @@
-import Array.LargestSumContNum;
-import Array.LengthofNonRepeatedNum;
-import Array.StockSellBuy;
+import Array.*;
 import DP.CoinChangeProblem;
 import DP.SubSetSum;
 import DP.knapsack0_1_Problem;
@@ -15,9 +13,9 @@ public class Main {
         System.out.println("Hello World!");
 
 
-//        arrayOperation();
+        arrayOperation();
 //        graphOperation();
-        dpOperation();
+//        dpOperation();
 
     }
 
@@ -46,6 +44,10 @@ public class Main {
 
         System.out.println("Max value using wt{1,3,4,5} and value{1,4,5,7} " +
                 "that can make a max weight 7 is "+ knapsack01Problem.maxValue(wt,val,7));
+
+        //4. Egg Dropping Problem
+        // Given num of egg and number of floor. Find in minimum number of steps to find
+        //from which floor the egg will break.
     }
 
     private static void arrayOperation() {
@@ -70,6 +72,17 @@ public class Main {
         System.out.println("Length of largest non repeated num:: "+ sellBuy.getMaxProfitBuySellOnce(e));
 
         System.out.println("Length of largest non repeated num:: "+ sellBuy.getMaxProfifSellingOnce(e));
+
+
+        //4. One Missing Num in 1 to N
+        OneMissingNum missingNum = new OneMissingNum();
+        int[] f={1,2,3,4,5,7};
+        System.out.println("Missing num "+missingNum.getMissingNum(f,7));
+
+        //5. Sort by Freq
+        SortByFreq sortByFreq = new SortByFreq();
+        int g[] = {5,5,2,8,2,6,8,8};
+        sortByFreq.Sort(g);
 
 
     }
