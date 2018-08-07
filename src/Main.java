@@ -89,6 +89,12 @@ public class Main {
         int h[] = {7, 6, 8, 10, 11, 5, 4, 99};
         twoSmallestNum.smallestNum(h);
 
+        //7. Majority
+        Majority majority = new Majority();
+        int i[] = {1,1,2,2,4};
+        int x = 2;
+        System.out.println(x+" is majority:: " + majority.isMajority(i,2));
+
 
     }
 
