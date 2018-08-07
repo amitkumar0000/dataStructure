@@ -84,6 +84,11 @@ public class Main {
         int g[] = {5,5,2,8,2,6,8,8};
         sortByFreq.Sort(g);
 
+        //6. Two smallest num
+        FindTwoSmallestNum twoSmallestNum = new FindTwoSmallestNum();
+        int h[] = {7, 6, 8, 10, 11, 5, 4, 99};
+        twoSmallestNum.smallestNum(h);
+
 
     }
 
