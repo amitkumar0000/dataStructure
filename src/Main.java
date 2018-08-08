@@ -95,6 +95,16 @@ public class Main {
         int x = 2;
         System.out.println(x+" is majority:: " + majority.isMajority(i,2));
 
+        //8 Max diff such that number in sequence smaller ---- larger
+        MaxDiff diff = new MaxDiff();
+        int j[] = {4,7,2,18,3,6,8,11,21,1,234};
+        System.out.println(" Max diff : "+ diff.getMaxDiff(j));
+
+        //9. Closest Pair sum
+        ClosestSumPair sumPair = new ClosestSumPair();
+        int k[] ={4,16,28,37,42,64,65,124,245};
+        sumPair.printClosestSumPair(k,201);
+
 
     }
 
