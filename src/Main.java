@@ -4,6 +4,8 @@ import DP.SubSetSum;
 import DP.knapsack0_1_Problem;
 import Graph.GraphTraversal;
 import Graph.Graph;
+import Graph.MatrixCell.Cell;
+import Graph.ShortestPath;
 
 public class Main {
 
@@ -13,8 +15,8 @@ public class Main {
         System.out.println("Hello World!");
 
 
-        arrayOperation();
-//        graphOperation();
+//        arrayOperation();
+        graphOperation();
 //        dpOperation();
 
     }
@@ -91,9 +93,13 @@ public class Main {
 
         //7. Majority
         Majority majority = new Majority();
-        int i[] = {1,1,2,2,4};
+        int i[] = {2,1,2,2,4};
         int x = 2;
-        System.out.println(x+" is majority:: " + majority.isMajority(i,2));
+        System.out.println(x+" is majority:: " + majority.isMajorityInSortedArray(i,2));
+
+        int i1[] = {4,3,1,4,3,4,5,4,4,2,4,2,4,4};
+        System.out.println("  majority num:: " + majority.getMajorityEleInUnSortedArray(i1));
+
 
         //8 Max diff such that number in sequence smaller ---- larger
         MaxDiff diff = new MaxDiff();
@@ -105,6 +111,24 @@ public class Main {
         int k[] ={4,16,28,37,42,64,65,124,245};
         sumPair.printClosestSumPair(k,201);
 
+        //10. Print Distinct ele
+        DistinctEle distinctEle = new DistinctEle();
+        int l[]= {14,16,19,14,46,19,16,16,110};
+        distinctEle.printDistinctEle(l);
+
+        //11. Common ele in given arrays
+        CommonEleInArray eleInArray = new CommonEleInArray();
+        int m[] = {1, 5, 10, 20, 40, 80};
+        int n[] =  {6, 7, 20, 80, 100};
+        int o[] = {3, 4, 15, 20, 30, 70, 80, 120};
+        System.out.println("Common ele is:: "+ eleInArray.getCommonEle(m,n,o));
+
+
+        //12. Max Sum non adjacent number
+        MaxDiffNonAdjacent maxDiffNonAdjacent = new MaxDiffNonAdjacent();
+        int p[] = {23,2,1,5};
+        System.out.println("Max sum non adjacent num:: "+maxDiffNonAdjacent.getMaxSumNonAdj(p));
+
 
     }
 
@@ -112,6 +136,19 @@ public class Main {
     private static void graphOperation() {
         createGraph();
         graphTraversal();
+
+        //Shortest Path b/w two cell in a matrix
+        int N = 4,M=4;
+        int[][] a = {
+                {0,1,0,1},
+                {1,0,1,1},
+                {0,1,1,1},
+                {1,1,1,1}
+        };
+        Cell src = new Cell(0,3,0,null);
+        Cell dst = new Cell(3,2,0,null);
+        ShortestPath shortestPath = new ShortestPath();
+        System.out.println("Shortest dist:: "+ shortestPath.getMinDisBwTwoGridInMatrix(a,N,M,src,dst));
     }
 
     private static void createGraph() {

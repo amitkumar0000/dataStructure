@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Majority {
 
-    public boolean isMajority(int[] arr, int x){
+    public boolean isMajorityInSortedArray(int[] arr, int x){
         int k = -1;
         if(arr[arr.length/2] == x){
             int[] temp = new int[(arr.length/2)];
@@ -20,5 +20,32 @@ public class Majority {
             return true;
         else
             return false;
+    }
+
+    public int getMajorityEleInUnSortedArray(int[] a){
+        int count = 1;
+        int indx = 0;
+        for(int i = 1; i<a.length; i++){
+            if(a[indx] == a[i])
+                count++;
+            else
+                count--;
+            if(count == 0){
+                count = 1;
+                indx = i;
+            }
+        }
+
+        count = 0;
+        for(int i = 0; i< a.length; i++){
+            if(a[indx] ==  a[i]){
+                count++;
+            }
+        }
+
+        if(count > a.length/2){
+            return a[indx];
+        }else
+            return -1;
     }
 }
