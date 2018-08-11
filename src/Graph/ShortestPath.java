@@ -26,6 +26,7 @@ public class ShortestPath {
             Cell ce = queue.poll();
 
             if(ce.r == dest.r && ce.c == dest.c){
+                printPath(ce);
                 return ce.dist;
             }
 
@@ -55,5 +56,15 @@ public class ShortestPath {
         }
 
         return -1;
+    }
+
+    private void printPath(Cell ce) {
+        System.out.println("\nShortest path from dest to source :");
+        while(ce.prev!=null){
+            System.out.print("{" +ce.r +","+ ce.c +"}");
+            ce = ce.prev;
+        }
+        System.out.println();
+
     }
 }
