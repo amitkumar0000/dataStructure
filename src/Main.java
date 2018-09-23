@@ -1,4 +1,5 @@
 import Array.*;
+import BinaryHeap.MinBinaryHeap;
 import DP.CoinChangeProblem;
 import DP.SubSetSum;
 import DP.knapsack0_1_Problem;
@@ -6,6 +7,8 @@ import Graph.GraphTraversal;
 import Graph.Graph;
 import Graph.MatrixCell.Cell;
 import Graph.ShortestPath;
+import GraphDs.DijkstraAlgorithms;
+import GraphDs.TopologocalSort;
 import Tree.Trie;
 
 public class Main {
@@ -19,7 +22,15 @@ public class Main {
 //        arrayOperation();
 //        graphOperation();
 //        dpOperation();
-        TreeOperation();
+//        TreeOperation();
+
+        createGraphDs();
+
+        topologicalSortDemo();
+
+        binaryHeap();
+
+        dijkstraAlgorithms();
 
     }
 
@@ -197,6 +208,81 @@ public class Main {
 
         traversal.bfsTraversal(graph);
         traversal.dfsTraversal(graph);
+    }
+
+    private static void createGraphDs() {
+        GraphDs.Graph graph = new GraphDs.Graph(6,true);
+
+        graph.add(1,2);
+        graph.add(1,3);
+        graph.add(2,4);
+        graph.add(2,5);
+        graph.add(3,6);
+        graph.add(3,4);
+        graph.add(4,5);
+        graph.add(6,1);
+
+        System.out.println("======= BFS =======");
+
+        graph.bfs();
+
+        System.out.println("======= DFS =======");
+
+        graph.dfs();
+
+        System.out.println("======= DFS Recursive=======");
+
+        graph.dfsRecu();
+
+    }
+
+    private static void topologicalSortDemo() {
+        TopologocalSort topologocalSort  = new TopologocalSort(7,true);
+
+        topologocalSort.add('A','C');
+        topologocalSort.add('B','C');
+        topologocalSort.add('B','D');
+        topologocalSort.add('C','E');
+        topologocalSort.add('D','F');
+        topologocalSort.add('E','F');
+        topologocalSort.add('F','G');
+
+        System.out.println("===== Topological Sort ======");
+
+        topologocalSort.sort();
+
+    }
+
+
+    private static void binaryHeap() {
+        MinBinaryHeap minBinaryHeap = new MinBinaryHeap();
+        minBinaryHeap.insert('A',Integer.MAX_VALUE);
+        minBinaryHeap.insert('B',Integer.MAX_VALUE);
+        minBinaryHeap.insert('C',Integer.MAX_VALUE);
+        minBinaryHeap.insert('D',Integer.MAX_VALUE);
+        minBinaryHeap.insert('E',Integer.MAX_VALUE);
+        minBinaryHeap.insert('F',Integer.MAX_VALUE);
+        System.out.println("==== Min Node in Binary Heap ===== " + minBinaryHeap.getMinVertex().getVertex() + " "
+                + minBinaryHeap.getMinVertex().getKey());
+    }
+    private static void dijkstraAlgorithms() {
+        DijkstraAlgorithms dijkstra = new DijkstraAlgorithms(6,false);
+
+        //Adjacency List
+        dijkstra.add('A','B',5);
+        dijkstra.add('A','D',9);
+        dijkstra.add('A','E',2);
+        dijkstra.add('B','C',2);
+        dijkstra.add('C','D',3);
+        dijkstra.add('D','F',2);
+        dijkstra.add('E','F',3);
+
+        //Init Binary Heap
+        dijkstra.initBinaryHeap();
+
+        System.out.println("=== Dijkstra Algorithm Shortest Path from A ====");
+
+        dijkstra.shortestPath('A');
     }
 
 
