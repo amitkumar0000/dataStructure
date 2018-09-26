@@ -3,11 +3,13 @@ import BinaryHeap.MinBinaryHeap;
 import DP.CoinChangeProblem;
 import DP.SubSetSum;
 import DP.knapsack0_1_Problem;
+import DisjointSets.DisjointSets;
 import Graph.GraphTraversal;
 import Graph.Graph;
 import Graph.MatrixCell.Cell;
 import Graph.ShortestPath;
 import GraphDs.DijkstraAlgorithms;
+import GraphDs.MinimumSpanningTree;
 import GraphDs.TopologocalSort;
 import Tree.Trie;
 
@@ -25,12 +27,11 @@ public class Main {
 //        TreeOperation();
 
         createGraphDs();
-
         topologicalSortDemo();
-
         binaryHeap();
-
         dijkstraAlgorithms();
+        disjointSetOperation();
+        minimumSpanningTree();
 
     }
 
@@ -55,8 +56,6 @@ public class Main {
         }
 
     }
-
-
     private static void dpOperation() {
 
         //1. Coin Change Problem
@@ -87,7 +86,6 @@ public class Main {
         // Given num of egg and number of floor. Find in minimum number of steps to find
         //from which floor the egg will break.
     }
-
     private static void arrayOperation() {
         //1. Largest sum contiguous subarray
         int a[] = {-2, -3, 4, -1, -2, 5, -3, 8, -89, -100, 456, 900};
@@ -167,8 +165,6 @@ public class Main {
 
 
     }
-
-
     private static void graphOperation() {
         createGraph();
         graphTraversal();
@@ -186,13 +182,10 @@ public class Main {
         ShortestPath shortestPath = new ShortestPath();
         System.out.println("Shortest dist:: " + shortestPath.getMinDisBwTwoGridInMatrix(a, N, M, src, dst));
     }
-
     private static void createGraph() {
         graph = new Graph(true);
         addEdges();
     }
-
-
     private static void addEdges() {
         graph.addEdge(1, 2);
         graph.addEdge(1, 3);
@@ -202,14 +195,12 @@ public class Main {
         graph.addEdge(5, 3);
         graph.addEdge(6, 5);
     }
-
     private static void graphTraversal() {
         GraphTraversal traversal = new GraphTraversal();
 
         traversal.bfsTraversal(graph);
         traversal.dfsTraversal(graph);
     }
-
     private static void createGraphDs() {
         GraphDs.Graph graph = new GraphDs.Graph(6,true);
 
@@ -235,7 +226,6 @@ public class Main {
         graph.dfsRecu();
 
     }
-
     private static void topologicalSortDemo() {
         TopologocalSort topologocalSort  = new TopologocalSort(7,true);
 
@@ -252,8 +242,6 @@ public class Main {
         topologocalSort.sort();
 
     }
-
-
     private static void binaryHeap() {
         MinBinaryHeap minBinaryHeap = new MinBinaryHeap();
         minBinaryHeap.insert('A',Integer.MAX_VALUE);
@@ -284,6 +272,61 @@ public class Main {
 
         dijkstra.shortestPath('A');
     }
+    private static void disjointSetOperation() {
+        DisjointSets disjointSets = new DisjointSets();
+        disjointSets.makeSet('A');
+        disjointSets.makeSet('B');
+        disjointSets.makeSet('C');
+        disjointSets.makeSet('D');
+        disjointSets.makeSet('E');
+        disjointSets.makeSet('F');
 
+        disjointSets.union('A','D');
+        disjointSets.union('B','C');
+        disjointSets.union('C','D');
+        disjointSets.union('E','F');
+        disjointSets.union('B','D');
+        disjointSets.union('A','B');
+        disjointSets.union('C','F');
+        disjointSets.union('C','E');
+        disjointSets.union('D','E');
+
+        System.out.println("===== Disjoing Set ===");
+
+    }
+
+    private static void minimumSpanningTree() {
+        MinimumSpanningTree minimumSpanningTree = new MinimumSpanningTree(6,true);
+
+
+        minimumSpanningTree.add('A','D',1);
+        minimumSpanningTree.add('A','B',3);
+
+        minimumSpanningTree.add('B','A',3);
+        minimumSpanningTree.add('B','C',1);
+        minimumSpanningTree.add('B','D',3);
+
+        minimumSpanningTree.add('C','B',1);
+        minimumSpanningTree.add('C','D',1);
+        minimumSpanningTree.add('C','E',5);
+        minimumSpanningTree.add('C','F',4);
+
+        minimumSpanningTree.add('D','A',1);
+        minimumSpanningTree.add('D','B',3);
+        minimumSpanningTree.add('D','C',1);
+        minimumSpanningTree.add('D','E',6);
+
+        minimumSpanningTree.add('E','C',5);
+        minimumSpanningTree.add('E','D',6);
+        minimumSpanningTree.add('E','F',2);
+
+        minimumSpanningTree.add('F','C',4);
+        minimumSpanningTree.add('F','E',2);
+
+
+        System.out.println("===== Minimum Spinning Tree ======");
+
+        minimumSpanningTree.MST();
+    }
 
 }
