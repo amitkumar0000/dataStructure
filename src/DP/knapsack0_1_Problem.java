@@ -1,5 +1,11 @@
 package DP;
 
+/*
+For a given number of items with Weight and Values.
+How to pick items with maximum value such that 
+total weight of item does not exceed of permissible weight to pick.
+*/
+
 public class knapsack0_1_Problem {
 
     public int maxValue(int wt[], int val[],int sum){
