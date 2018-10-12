@@ -21,6 +21,14 @@ public class Majority {
         else
             return false;
     }
+    
+    /*
+    The algorithm for first phase that works in O(n) is known as Moore’s Voting Algorithm.
+    Basic idea of the algorithm is that 
+    if we cancel out each occurrence of an element e with all the other elements 
+    that are different from e 
+    then e will exist till end if it is a majority element.
+    */
 
     public int getMajorityEleInUnSortedArray(int[] a){
         int count = 1;
