@@ -126,7 +126,7 @@ public class Main {
 
         //5. Sort by Freq
         SortByFreq sortByFreq = new SortByFreq();
-        int g[] = {5, 5, 2, 8, 2, 6, 8, 8};
+        int g[] = {5,2,2,8,5,6,8,8};
         sortByFreq.Sort(g);
 
         //6. Two smallest num
@@ -171,6 +171,13 @@ public class Main {
         MaxDiffNonAdjacent maxDiffNonAdjacent = new MaxDiffNonAdjacent();
         int p[] = {23, 2, 1, 5};
         System.out.println("Max sum non adjacent num:: " + maxDiffNonAdjacent.getMaxSumNonAdj(p));
+
+
+        // Max Difference bet ele
+        DiffBetEle diffBetEle = new DiffBetEle();
+        int q[] ={ 4 , 7  ,2  ,18 , 3 , 6  ,8  ,11 , 21};
+        System.out.println("Max Difference bet num:: " + diffBetEle.getMaxDiff(q));
+
 
 
     }

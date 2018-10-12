@@ -18,12 +18,14 @@ public class SortByFreq {
 
         List<Map.Entry<Integer,Integer>> list = new ArrayList<>(hashmap.entrySet());
 
-        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
+    /*    Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
             @Override
             public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
                 return o2.getValue().compareTo(o1.getValue());
             }
-        });
+        });*/
+
+        Collections.sort(list, (o2,o1)-> o1.getValue().compareTo(o2.getValue()));
 
         int k = 0;
         for(Map.Entry<Integer,Integer> entryMap: list){
