@@ -1,5 +1,10 @@
 package DP;
 
+/*
+For a given Sum, find the element in given
+integer set that adds to Sum
+ */
+
 public class SubSetSum {
 
     public boolean isSubsetSum(int num[], int sum){

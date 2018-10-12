@@ -1,5 +1,10 @@
 package DP;
 
+
+/*
+Given a infinite number of given set of coins.
+What is minimum num of coins that adds to given sum
+ */
 public class CoinChangeProblem {
     int r, c;
     int[][] T;

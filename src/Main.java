@@ -1,6 +1,7 @@
 import Array.*;
 import BinaryHeap.MinBinaryHeap;
 import DP.CoinChangeProblem;
+import DP.LongestCommonSubSequence;
 import DP.SubSetSum;
 import DP.knapsack0_1_Problem;
 import DisjointSets.DisjointSets;
@@ -21,17 +22,17 @@ public class Main {
         System.out.println("Hello World!");
 
 
-//        arrayOperation();
+        arrayOperation();
 //        graphOperation();
 //        dpOperation();
 //        TreeOperation();
 
-        createGraphDs();
-        topologicalSortDemo();
-        binaryHeap();
-        dijkstraAlgorithms();
-        disjointSetOperation();
-        minimumSpanningTree();
+//        createGraphDs();
+//        topologicalSortDemo();
+//        binaryHeap();
+//        dijkstraAlgorithms();
+//        disjointSetOperation();
+//        minimumSpanningTree();
 
     }
 
@@ -82,6 +83,10 @@ public class Main {
         System.out.println("Max value using wt{1,3,4,5} and value{1,4,5,7} " +
                 "that can make a max weight 7 is " + knapsack01Problem.maxValue(wt, val, 7));
 
+        //4. Longest Common SubSequence
+        LongestCommonSubSequence longestCommonSubSequence = new LongestCommonSubSequence();
+
+
         //4. Egg Dropping Problem
         // Given num of egg and number of floor. Find in minimum number of steps to find
         //from which floor the egg will break.
@@ -93,6 +98,10 @@ public class Main {
         System.out.println("Largest Sum contiguous subarray:: " + sumContNum.getLargestSumContNum(a));
         int b[] = {-2, -3, 4, -1, -2, 1, 5, -3};
         System.out.println("Largest Sum contiguous subarray:: " + sumContNum.getLargestSumContNum(b));
+        int b1[] = {-2, -3, -4, -1, -2, -1, -5, -3};
+
+        System.out.println("Largest Sum contiguous subarray(Kadane's Algo):: " + sumContNum.getLagestSumContNumberDP(b1));
+
 
 
         //2. Find the length of the non repeated numbers in an array.
