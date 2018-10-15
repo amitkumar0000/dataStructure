@@ -178,6 +178,9 @@ public class Main {
         int q[] ={ 4 , 7  ,2  ,18 , 3 , 6  ,8  ,11 , 21};
         System.out.println("Max Difference bet num:: " + diffBetEle.getMaxDiff(q));
 
+        //Rotate by 90
+        RotateNDegree rotateNDegree = new RotateNDegree();
+        rotateNDegree.rotate90D();
 
 
     }
