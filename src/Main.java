@@ -14,6 +14,7 @@ import GraphDs.MinimumSpanningTree;
 import GraphDs.TopologocalSort;
 import Tree.BinaryTree;
 import Tree.Trie;
+import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
 
 public class Main {
@@ -68,6 +69,16 @@ public class Main {
         treeDFS.Preorder(binaryTree.root);
         System.out.println("\nPostorder Traversal");
         treeDFS.Postorder(binaryTree.root);
+
+        LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal();
+        System.out.println("\nLevel Order Traversal");
+        levelOrderTraversal.levelOrder(binaryTree.root);
+        System.out.println("\nLevel Order Traversal In Tree Manner");
+        levelOrderTraversal.levelOrderInTreeManner(binaryTree.root);
+        System.out.println("\nLevel Order Traversal In Tree Manner Using Counter");
+        levelOrderTraversal.levelOrderUsingCounter(binaryTree.root);
+        System.out.println("\nLevel Order Traversal In Tree Manner Using Recursion");
+        levelOrderTraversal.printLevelOrder(binaryTree.root);
 
     }
 
