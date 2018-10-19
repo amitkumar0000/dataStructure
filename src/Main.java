@@ -16,10 +16,7 @@ import Tree.BinaryTree;
 import Tree.Trie;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
-import Tree.traversal.DifferentTreeView.DiagonalView;
-import Tree.traversal.DifferentTreeView.LeftRightView;
-import Tree.traversal.DifferentTreeView.SpiralView;
-import Tree.traversal.DifferentTreeView.TopBottomView;
+import Tree.traversal.DifferentTreeView.*;
 
 public class Main {
 
@@ -110,6 +107,9 @@ public class Main {
         spiralView.spiral(binaryTree.root);
 
 
+        MirrorView mirrorView = new MirrorView();
+        System.out.println("\nMirror View");
+        mirrorView.Mirror(binaryTree.root);
 
 
     }
