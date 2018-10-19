@@ -16,6 +16,7 @@ import Tree.BinaryTree;
 import Tree.Trie;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
+import Tree.traversal.DifferentTreeView.LeftRightView;
 
 public class Main {
 
@@ -79,6 +80,17 @@ public class Main {
         levelOrderTraversal.levelOrderUsingCounter(binaryTree.root);
         System.out.println("\nLevel Order Traversal In Tree Manner Using Recursion");
         levelOrderTraversal.printLevelOrder(binaryTree.root);
+
+
+        LeftRightView leftRightView = new LeftRightView();
+
+        System.out.println("\nLeft View");
+        leftRightView.leftView(binaryTree.root,1);
+
+        System.out.println("\nRight View");
+        leftRightView.rightView(binaryTree.root,1);
+
+
 
     }
 
