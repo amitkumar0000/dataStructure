@@ -17,6 +17,7 @@ import Tree.Trie;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
 import Tree.traversal.DifferentTreeView.*;
+import Tree.traversal.LCA;
 
 public class Main {
 
@@ -110,6 +111,10 @@ public class Main {
         MirrorView mirrorView = new MirrorView();
         System.out.println("\nMirror View");
         mirrorView.Mirror(binaryTree.root);
+
+        LCA lca = new LCA();
+        System.out.println("\nLowest Common Ancestor");
+        lca.lowestCommonAncestor(binaryTree.root,10,11);
 
 
     }
