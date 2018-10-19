@@ -16,6 +16,7 @@ import Tree.BinaryTree;
 import Tree.Trie;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
+import Tree.traversal.DifferentTreeView.DiagonalView;
 import Tree.traversal.DifferentTreeView.LeftRightView;
 import Tree.traversal.DifferentTreeView.TopBottomView;
 
@@ -98,6 +99,10 @@ public class Main {
 
         System.out.println("\nBottom View");
         topBottomView.BottomView(binaryTree.root);
+
+        System.out.print("\n Diagonal View\n");
+        DiagonalView diagonalView = new DiagonalView();
+        diagonalView.diagonal(binaryTree.root);
 
 
 
