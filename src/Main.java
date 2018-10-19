@@ -12,7 +12,9 @@ import Graph.ShortestPath;
 import GraphDs.DijkstraAlgorithms;
 import GraphDs.MinimumSpanningTree;
 import GraphDs.TopologocalSort;
+import Tree.BinaryTree;
 import Tree.Trie;
+import Tree.traversal.DFS.TreeDFS;
 
 public class Main {
 
@@ -22,10 +24,10 @@ public class Main {
         System.out.println("Hello World!");
 
 
-        arrayOperation();
+//        arrayOperation();
 //        graphOperation();
 //        dpOperation();
-//        TreeOperation();
+        TreeOperation();
 
 //        createGraphDs();
 //        topologicalSortDemo();
@@ -37,6 +39,39 @@ public class Main {
     }
 
     private static void TreeOperation() {
+        TrieOperation();
+
+        BinaryTreeOPeration();
+
+
+    }
+
+    private static void BinaryTreeOPeration() {
+        BinaryTree binaryTree = new BinaryTree();
+
+        System.out.println("=== Binary Tee Insert ==== ");
+        binaryTree.add(100);
+        binaryTree.add(90);
+        binaryTree.add(110);
+        binaryTree.add(85);
+        binaryTree.add(95);
+        binaryTree.add(105);
+        binaryTree.add(115);
+        binaryTree.add(75);
+        binaryTree.add(88);
+
+        TreeDFS treeDFS = new TreeDFS();
+
+        System.out.println("Inorder Traversal");
+        treeDFS.Inorder(binaryTree.root);
+        System.out.println("\nPreorder Traversal");
+        treeDFS.Preorder(binaryTree.root);
+        System.out.println("\nPostorder Traversal");
+        treeDFS.Postorder(binaryTree.root);
+
+    }
+
+    private static void TrieOperation() {
         Trie trie = new Trie();
 
         //1. Insert
@@ -55,8 +90,8 @@ public class Main {
         for(String d: data1){
             System.out.println(d+ " is found in trie:: "+ trie.wordSearch(d));
         }
-
     }
+
     private static void dpOperation() {
 
         //1. Coin Change Problem
