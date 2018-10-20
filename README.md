@@ -26,9 +26,13 @@ B-Tree is m-way tree with below restriction
 4. Insertion follow Bottom up 
 
 class BTree{
+  
   int deg;
+  
   BTree cp[deg];
+  
   int key[deg-1];
+  
   int ele[deg-1];
 }
 
@@ -42,11 +46,16 @@ Lead node is dense node. Non-leaf node is sparse node.
 Bplus tree is more like database Indexing.
 
 class BplusTree{
-  int deg;
+  int deg; 
+  
   boolean leaf;
+  
   BplusTree cp[deg];
+  
   int key[deg-1];
+  
   int ele[deg-1];
+  
   BplusTree next;
 }
 
