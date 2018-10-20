@@ -13,11 +13,12 @@ import GraphDs.DijkstraAlgorithms;
 import GraphDs.MinimumSpanningTree;
 import GraphDs.TopologocalSort;
 import Tree.BinaryTree;
+import Tree.InorderSuccessorPredeccessor;
 import Tree.Trie;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
 import Tree.traversal.DifferentTreeView.*;
-import Tree.traversal.LCA;
+import Tree.LCA;
 
 public class Main {
 
@@ -114,7 +115,11 @@ public class Main {
 
         LCA lca = new LCA();
         System.out.println("\nLowest Common Ancestor");
-        lca.lowestCommonAncestor(binaryTree.root,10,11);
+        lca.lowestCommonAncestor(binaryTree.root,90,95);
+
+        InorderSuccessorPredeccessor inorderSuccessorPredeccessor = new InorderSuccessorPredeccessor();
+        System.out.println("\nInorder successor");
+        inorderSuccessorPredeccessor.InorderSuccessor(binaryTree.root,75);
 
 
     }

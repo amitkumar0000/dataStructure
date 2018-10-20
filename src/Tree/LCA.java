@@ -1,4 +1,4 @@
-package Tree.traversal;
+package Tree;
 
 import Tree.BinaryTree;
 
