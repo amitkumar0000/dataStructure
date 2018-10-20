@@ -35,4 +35,38 @@ public class InorderSuccessorPredeccessor {
            return minimum(root.left);
     }
 
+    BinaryTree max(BinaryTree root){
+        if(root == null)
+            return null;
+        else if(root.right == null)
+            return root;
+        else
+            return max(root.right);
+    }
+
+    public void InorderPredeccessor(BinaryTree root,int ele){
+        BinaryTree pred = null;
+        while(root!=null){
+            if(root.ele>ele){
+                root = root.left;
+            }else if(root.ele < ele){
+                pred = root;
+                root = root.right;
+            }else
+                break;
+        }
+
+        if(root!=null && root.left!=null){
+            System.out.print(max(root.left).ele);
+        }else if(root!=null && root.left == null){
+            if(pred!=null){
+                System.out.print(pred.ele);
+            }else{
+                System.out.print("No Inorder predeccessor");
+            }
+        }else{
+            System.out.print("No Inorder predeccessor");
+        }
+    }
+
 }

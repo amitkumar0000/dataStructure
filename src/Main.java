@@ -118,8 +118,12 @@ public class Main {
         lca.lowestCommonAncestor(binaryTree.root,90,95);
 
         InorderSuccessorPredeccessor inorderSuccessorPredeccessor = new InorderSuccessorPredeccessor();
+
+        System.out.println("\nInorder Predeccessor");
+        inorderSuccessorPredeccessor.InorderPredeccessor(binaryTree.root,115);
+
         System.out.println("\nInorder successor");
-        inorderSuccessorPredeccessor.InorderSuccessor(binaryTree.root,75);
+        inorderSuccessorPredeccessor.InorderSuccessor(binaryTree.root,95);
 
 
     }
