@@ -12,6 +12,7 @@ import Graph.ShortestPath;
 import GraphDs.DijkstraAlgorithms;
 import GraphDs.MinimumSpanningTree;
 import GraphDs.TopologocalSort;
+import SuffixPrefix.KMPAlgorithms;
 import Tree.BinaryTree;
 import Tree.InorderSuccessorPredeccessor;
 import Tree.Trie;
@@ -31,8 +32,8 @@ public class Main {
 //        arrayOperation();
 //        graphOperation();
 //        dpOperation();
-        TreeOperation();
-
+//        TreeOperation();
+          SuffixPrefixOperation();
 //        createGraphDs();
 //        topologicalSortDemo();
 //        binaryHeap();
@@ -48,6 +49,17 @@ public class Main {
         BinaryTreeOPeration();
 
 
+    }
+    private static void SuffixPrefixOperation() {
+        KMPAlgorithmsOperation();
+    }
+
+    private static void KMPAlgorithmsOperation() {
+        KMPAlgorithms kmpAlgorithms = new KMPAlgorithms();
+        String str = "abcxabcdabxababcdabcdabcy";
+        String pat = "abcdabcy";
+        System.out.println("Substring "+ pat+" is present ::" +
+                kmpAlgorithms.normalSubString(str,pat)+ " in "+str);
     }
 
     private static void BinaryTreeOPeration() {
@@ -127,7 +139,6 @@ public class Main {
 
 
     }
-
     private static void TrieOperation() {
         Trie trie = new Trie();
 
@@ -148,7 +159,6 @@ public class Main {
             System.out.println(d+ " is found in trie:: "+ trie.wordSearch(d));
         }
     }
-
     private static void dpOperation() {
 
         //1. Coin Change Problem
@@ -405,7 +415,6 @@ public class Main {
         System.out.println("===== Disjoing Set ===");
 
     }
-
     private static void minimumSpanningTree() {
         MinimumSpanningTree minimumSpanningTree = new MinimumSpanningTree(6,true);
 
