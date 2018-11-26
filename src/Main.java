@@ -12,14 +12,16 @@ import Graph.ShortestPath;
 import GraphDs.DijkstraAlgorithms;
 import GraphDs.MinimumSpanningTree;
 import GraphDs.TopologocalSort;
+import StringsQues.StringProblems;
 import SuffixPrefix.KMPAlgorithms;
-import Tree.BinaryTree;
-import Tree.InorderSuccessorPredeccessor;
-import Tree.Trie;
+import Tree.*;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
 import Tree.traversal.DifferentTreeView.*;
-import Tree.LCA;
+import problems.StackMinProblems;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -33,7 +35,7 @@ public class Main {
 //        graphOperation();
 //        dpOperation();
 //        TreeOperation();
-          SuffixPrefixOperation();
+//          SuffixPrefixOperation();
 //        createGraphDs();
 //        topologicalSortDemo();
 //        binaryHeap();
@@ -41,10 +43,74 @@ public class Main {
 //        disjointSetOperation();
 //        minimumSpanningTree();
 
+        stringQuestion();
+
+//        impQuestion();
+
+    }
+
+    private static void impQuestion() {
+
+        StackMinProblems stackMinProblems = new StackMinProblems();
+
+        stackMinProblems.push(18);
+        stackMinProblems.push(19);
+
+        stackMinProblems.getMin();
+
+        stackMinProblems.push(29);
+        stackMinProblems.getMin();
+
+        stackMinProblems.push(15);
+        stackMinProblems.getMin();
+
+        stackMinProblems.push(16);
+
+        stackMinProblems.pop();
+        stackMinProblems.getMin();
+
+        stackMinProblems.pop();
+        stackMinProblems.getMin();
+
+
+
+
+
+
+    }
+
+    private static void stringQuestion() {
+        StringProblems sp = new StringProblems();
+        String str = "25 + 3 - 2 * 11";
+
+        System.out.println(str+" is palindrome:: "+ sp.isPallindrome(str));
+        System.out.println(str+" reverse is :: "+ sp.reverse(str));
+
+        String gStr="amazon";
+        String rStr="zonama";
+        System.out.println(gStr + " roates two time gives "+ rStr + " is "+ sp.isRotatedTwoTimes(gStr,rStr));
+
+        System.out.println("String sentence in reverse order-------");
+        sp.printWordOfStringInReverseOrder("I AM A GEEK");
+        sp.printWordOfStringInReverseOrder("GfG IS THE BEST");
+        System.out.print("\n");
+
+        System.out.println("Sorted String array based on length------ ");
+        String[] strA = {"GeeksforGeeeks", "I", "from", "am"};
+        String[] strA1 = {"You", "are", "beautiful", "looking"};
+        sp.sortViaStringLeng(strA1);
+
+
+
+        System.out.println("String sentence in reverse order 2nd way-------");
+        sp.printWordReverse("I AM A GEEK");
+        System.out.print("\n");
+
+
     }
 
     private static void TreeOperation() {
-        TrieOperation();
+//        TrieOperation();
 
         BinaryTreeOPeration();
 
@@ -75,6 +141,11 @@ public class Main {
         binaryTree.add(115);
         binaryTree.add(75);
         binaryTree.add(88);
+
+        TreeProblems treeProblems = new TreeProblems();
+        System.out.println("All Path from Root to  Leaf");
+//        treeProblems.printPathRootToLeaf(binaryTree);
+        treeProblems.printPathRec(binaryTree.root);
 
         TreeDFS treeDFS = new TreeDFS();
 
@@ -283,6 +354,11 @@ public class Main {
         //Rotate by 90
         RotateNDegree rotateNDegree = new RotateNDegree();
         rotateNDegree.rotate90D();
+
+        //Biggest number formed by arranging numbers in array
+        BiggestNumByArrangArray numByArrangArray = new BiggestNumByArrangArray();
+        List r = Arrays.asList("3","30","34","5","4","9");
+        System.out.println("Biggest no is :: " + numByArrangArray.biggestNumByArrangingArray(r));
 
 
     }

@@ -1,0 +1,11 @@
+Reverse & Rotation :
+==========================
+1. Perfect Reversible String.
+    Check all substring of given string S is reverse of its.
+    Ans: If string is palindrome.
+2. Reverse a String
+    String does not have reverse method.
+    StringBuilder has
+
+Sorting & Searching :
+=======================
