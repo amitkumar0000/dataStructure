@@ -1,10 +1,10 @@
 package Tree.traversal.DFS;
 
-import Tree.BinaryTree;
+import Tree.BinarySearchTree;
 
 public class TreeDFS {
 
-    public void Inorder(BinaryTree root){
+    public void Inorder(BinarySearchTree root){
         if(root == null)
             return;
         else{
@@ -14,7 +14,7 @@ public class TreeDFS {
         }
     }
 
-    public void Preorder(BinaryTree root){
+    public void Preorder(BinarySearchTree root){
         if(root == null)
             return;
         else{
@@ -24,7 +24,7 @@ public class TreeDFS {
         }
     }
 
-    public void Postorder(BinaryTree root){
+    public void Postorder(BinarySearchTree root){
         if(root == null)
             return;
         else{

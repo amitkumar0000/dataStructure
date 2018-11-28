@@ -1,41 +1,47 @@
 package Tree;
 
-public class BinaryTree {
+import java.util.LinkedList;
+import java.util.Queue;
 
-    public BinaryTree left;
+public class BinaryTree {
+    public BinaryTree left,right;
     public int ele;
-    public BinaryTree right;
 
     public BinaryTree root;
 
-    public BinaryTree(){}
 
-    public BinaryTree(int ele) {
-        this.ele = ele;
-        left = right = null;
-    }
+    public void insert(int ele){
+        BinaryTree node = new BinaryTree();
+        node.left = node.right = null;
+        node.ele = ele;
+        BinaryTree curPtr  = root;
 
-    public void add(int ele){
-        BinaryTree node = new BinaryTree(ele);
-        BinaryTree temp = root;
+        Queue<BinaryTree> queue = new LinkedList();
+        queue.add(curPtr);
+
+
         if(root == null){
             root = node;
         }else{
-            BinaryTree parentNode = position(temp,ele);
-            if(parentNode.ele>ele){
-                parentNode.left = node;
-            }else{
-                parentNode.right = node;
+            while(curPtr.left!=null && curPtr.right!=null){
+
+                BinaryTree bt = queue.poll();
+
+                curPtr = bt;
+
+                if(bt.left!=null && bt.right!=null){
+                    queue.add(bt.left);
+                    queue.add(bt.right);
+                }
+
             }
+            if(curPtr.left == null)
+                curPtr.left = node;
+            else
+                curPtr.right = node;
         }
     }
 
-    public BinaryTree position(BinaryTree root,int ele){
-        if(ele>root.ele && root.right!=null ){
-               root =  position(root.right,ele);
-        } else if(ele < root.ele && root.left!=null){
-               root =  position(root.left,ele);
-        }
-        return root;
-    }
+
+
 }

@@ -2,8 +2,8 @@ package Tree;
 
 public class InorderSuccessorPredeccessor {
 
-    public void InorderSuccessor(BinaryTree root,int ele){
-       BinaryTree succ = null;
+    public void InorderSuccessor(BinarySearchTree root, int ele){
+       BinarySearchTree succ = null;
        while(root!=null){
            if(root.ele>ele){
                succ = root;
@@ -26,7 +26,7 @@ public class InorderSuccessorPredeccessor {
        }
     }
 
-    BinaryTree minimum(BinaryTree root){
+    BinarySearchTree minimum(BinarySearchTree root){
         if(root == null)
             return null;
         else if(root.left == null)
@@ -35,7 +35,7 @@ public class InorderSuccessorPredeccessor {
            return minimum(root.left);
     }
 
-    BinaryTree max(BinaryTree root){
+    BinarySearchTree max(BinarySearchTree root){
         if(root == null)
             return null;
         else if(root.right == null)
@@ -44,8 +44,8 @@ public class InorderSuccessorPredeccessor {
             return max(root.right);
     }
 
-    public void InorderPredeccessor(BinaryTree root,int ele){
-        BinaryTree pred = null;
+    public void InorderPredeccessor(BinarySearchTree root, int ele){
+        BinarySearchTree pred = null;
         while(root!=null){
             if(root.ele>ele){
                 root = root.left;

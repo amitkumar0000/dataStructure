@@ -1,10 +1,8 @@
 package Tree;
 
-import Tree.BinaryTree;
-
 public class LCA {
 
-    public void lowestCommonAncestor(BinaryTree root,int ele1,int ele2){
+    public void lowestCommonAncestor(BinarySearchTree root, int ele1, int ele2){
 
         if(root==null) {
             System.out.println("No Common Ancestor");

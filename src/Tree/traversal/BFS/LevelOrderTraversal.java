@@ -1,29 +1,29 @@
 package Tree.traversal.BFS;
 
-import Tree.BinaryTree;
+import Tree.BinarySearchTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class LevelOrderTraversal {
-    public void levelOrder(BinaryTree root){
+    public void levelOrder(BinarySearchTree root){
         if(root == null)
             return;
         Queue queue = new LinkedList<>();
         queue.add(root);
         while(!queue.isEmpty()){
-            BinaryTree binaryTree = (BinaryTree) queue.poll();
-            System.out.print(binaryTree.ele+" ");
-            if(binaryTree.left!=null){
-                queue.add(binaryTree.left);
+            BinarySearchTree binarySearchTree = (BinarySearchTree) queue.poll();
+            System.out.print(binarySearchTree.ele+" ");
+            if(binarySearchTree.left!=null){
+                queue.add(binarySearchTree.left);
             }
-            if(binaryTree.right!=null){
-                queue.add(binaryTree.right);
+            if(binarySearchTree.right!=null){
+                queue.add(binarySearchTree.right);
             }
         }
         System.out.print("\n");
     }
-    public void levelOrderInTreeManner(BinaryTree root){
+    public void levelOrderInTreeManner(BinarySearchTree root){
         Queue q = new LinkedList();
         if(root!=null){
             q.add(root);
@@ -31,7 +31,7 @@ public class LevelOrderTraversal {
         }
 
         while(!q.isEmpty()){
-            BinaryTree node = (BinaryTree) q.poll();
+            BinarySearchTree node = (BinarySearchTree) q.poll();
             if(node!=null){
                 System.out.print(node.ele+" ");
                 if(node.left!=null)
@@ -44,7 +44,7 @@ public class LevelOrderTraversal {
             }
         }
     }
-    public void levelOrderUsingCounter(BinaryTree root){
+    public void levelOrderUsingCounter(BinarySearchTree root){
         Queue queue = new LinkedList();
         int levelCount = 1;
         int counter = 0;
@@ -53,17 +53,17 @@ public class LevelOrderTraversal {
         }
 
         while(!queue.isEmpty()){
-            BinaryTree binaryTree = (BinaryTree) queue.poll();
-            System.out.print(binaryTree.ele + " ");
+            BinarySearchTree binarySearchTree = (BinarySearchTree) queue.poll();
+            System.out.print(binarySearchTree.ele + " ");
             levelCount--;
 
-            if(binaryTree.left!=null){
-                queue.add(binaryTree.left);
+            if(binarySearchTree.left!=null){
+                queue.add(binarySearchTree.left);
                 counter++;
             }
 
-            if(binaryTree.right!=null){
-                queue.add(binaryTree.right);
+            if(binarySearchTree.right!=null){
+                queue.add(binarySearchTree.right);
                 counter++;
             }
 
@@ -75,14 +75,14 @@ public class LevelOrderTraversal {
 
         }
     }
-    public void printLevelOrder(BinaryTree root){
+    public void printLevelOrder(BinarySearchTree root){
         int h = height(root);
         for(int i=1; i<=h; i++){
             printLevelOrder(root,i);
             System.out.print("\n");
         }
     }
-    private void printLevelOrder(BinaryTree root, int level) {
+    private void printLevelOrder(BinarySearchTree root, int level) {
         if(root==null){
             return;
         }
@@ -95,7 +95,7 @@ public class LevelOrderTraversal {
 
 
     }
-    int height(BinaryTree node){
+    int height(BinarySearchTree node){
         if(node==null)
             return 0;
         int l = height(node.left);

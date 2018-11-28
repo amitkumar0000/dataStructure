@@ -1,12 +1,12 @@
 package Tree.traversal.DifferentTreeView;
 
-import Tree.BinaryTree;
+import Tree.BinarySearchTree;
 
 import java.util.*;
 
 public class DiagonalView {
-    public void diagonal(BinaryTree root){
-        Map<BinaryTree,Integer> nodeKey = new LinkedHashMap<>();
+    public void diagonal(BinarySearchTree root){
+        Map<BinarySearchTree,Integer> nodeKey = new LinkedHashMap<>();
         Queue q = new LinkedList();
         Map<Integer,Queue<Integer>> viewMap = new LinkedHashMap<>();
 
@@ -14,7 +14,7 @@ public class DiagonalView {
         nodeKey.put(root,0);
 
         while(!q.isEmpty()){
-            BinaryTree node = (BinaryTree) q.poll();
+            BinarySearchTree node = (BinarySearchTree) q.poll();
             int key = nodeKey.get(node);
 
             if(!viewMap.containsKey(key)){

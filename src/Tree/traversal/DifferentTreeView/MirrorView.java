@@ -1,17 +1,17 @@
 package Tree.traversal.DifferentTreeView;
 
-import Tree.BinaryTree;
+import Tree.BinarySearchTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class MirrorView {
 
-    public void Mirror(BinaryTree root){
+    public void Mirror(BinarySearchTree root){
         Queue q = new LinkedList();
         q.add(root);
         while (!q.isEmpty()){
-            BinaryTree node = (BinaryTree) q.poll();
+            BinarySearchTree node = (BinarySearchTree) q.poll();
             System.out.print(node.ele+" ");
 
             if(node.right!=null)

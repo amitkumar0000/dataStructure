@@ -1,12 +1,12 @@
 package Tree.traversal.DifferentTreeView;
 
-import Tree.BinaryTree;
+import Tree.BinarySearchTree;
 
 public class LeftRightView {
     int leftMaxLevel =0;
     int rightMaxLevel = 0;
 
-    public void leftView(BinaryTree root,int level){
+    public void leftView(BinarySearchTree root, int level){
 
         if(root==null)
             return;
@@ -18,7 +18,7 @@ public class LeftRightView {
         leftView(root.right,level+1);
     }
 
-    public void rightView(BinaryTree root,int level){
+    public void rightView(BinarySearchTree root, int level){
         if(root==null)
             return;
         if(rightMaxLevel < level){

@@ -10,14 +10,14 @@ public class TreeProblems {
         path = new ArrayList<>();
     }
 
-    public void printPathRootToLeaf(BinaryTree binaryTree){
-        Stack<BinaryTree> stack = new Stack<>();
-        Stack<BinaryTree> tempS = new Stack<>();
+    public void printPathRootToLeaf(BinarySearchTree binarySearchTree){
+        Stack<BinarySearchTree> stack = new Stack<>();
+        Stack<BinarySearchTree> tempS = new Stack<>();
         Set<Integer> isVisited = new HashSet<>();
-        stack.push(binaryTree.root);
+        stack.push(binarySearchTree.root);
 
         while(!stack.isEmpty()){
-            BinaryTree node = stack.peek();
+            BinarySearchTree node = stack.peek();
             if(node.left!=null && !isVisited.contains(node.left.ele)){
                 stack.push(node.left);
             }else if(node.right!=null && !isVisited.contains(node.right.ele) ){
@@ -31,7 +31,7 @@ public class TreeProblems {
                     tempS.push(stack.pop());
                 }
                 while(!tempS.isEmpty()){
-                    BinaryTree popNode = tempS.pop();
+                    BinarySearchTree popNode = tempS.pop();
                     System.out.print(popNode.ele+" ");
                     stack.push(popNode);
                 }
@@ -42,7 +42,7 @@ public class TreeProblems {
         }
     }
 
-    public void printPathRec(BinaryTree node){
+    public void printPathRec(BinarySearchTree node){
         if(node == null){
             return;
         }

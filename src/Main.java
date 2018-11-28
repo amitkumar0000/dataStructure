@@ -15,6 +15,7 @@ import GraphDs.TopologocalSort;
 import StringsQues.StringProblems;
 import SuffixPrefix.KMPAlgorithms;
 import Tree.*;
+import Tree.checkingPrinting.CheckingPrinting;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
 import Tree.traversal.DifferentTreeView.*;
@@ -34,7 +35,7 @@ public class Main {
 //        arrayOperation();
 //        graphOperation();
 //        dpOperation();
-//        TreeOperation();
+        TreeOperation();
 //          SuffixPrefixOperation();
 //        createGraphDs();
 //        topologicalSortDemo();
@@ -43,7 +44,7 @@ public class Main {
 //        disjointSetOperation();
 //        minimumSpanningTree();
 
-        stringQuestion();
+//        stringQuestion();
 
 //        impQuestion();
 
@@ -112,10 +113,37 @@ public class Main {
     private static void TreeOperation() {
 //        TrieOperation();
 
-        BinaryTreeOPeration();
+//        BinaryTreeOPeration();
+
+        CheckingAndPrinting();
 
 
     }
+
+    private static void CheckingAndPrinting() {
+
+        BinaryTree binaryTree = new BinaryTree();
+
+        System.out.println("=== Binary Tee Insert ==== ");
+
+        binaryTree.insert(10);
+        binaryTree.insert(8);
+        binaryTree.insert(80);
+        binaryTree.insert(7);
+        binaryTree.insert(9);
+        binaryTree.insert(75);
+
+
+        CheckingPrinting checkingPrinting = new CheckingPrinting();
+
+
+        System.out.println("=====   IS Child Sum ::- " + checkingPrinting.isChildSum(binaryTree.root));
+        System.out.println("=====   IS BST ::- " + checkingPrinting.isBST(binaryTree.root));
+
+
+
+    }
+
     private static void SuffixPrefixOperation() {
         KMPAlgorithmsOperation();
     }
@@ -129,84 +157,84 @@ public class Main {
     }
 
     private static void BinaryTreeOPeration() {
-        BinaryTree binaryTree = new BinaryTree();
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
 
         System.out.println("=== Binary Tee Insert ==== ");
-        binaryTree.add(100);
-        binaryTree.add(90);
-        binaryTree.add(110);
-        binaryTree.add(85);
-        binaryTree.add(95);
-        binaryTree.add(105);
-        binaryTree.add(115);
-        binaryTree.add(75);
-        binaryTree.add(88);
+        binarySearchTree.add(100);
+        binarySearchTree.add(90);
+        binarySearchTree.add(110);
+        binarySearchTree.add(85);
+        binarySearchTree.add(95);
+        binarySearchTree.add(105);
+        binarySearchTree.add(115);
+        binarySearchTree.add(75);
+        binarySearchTree.add(88);
 
         TreeProblems treeProblems = new TreeProblems();
         System.out.println("All Path from Root to  Leaf");
-//        treeProblems.printPathRootToLeaf(binaryTree);
-        treeProblems.printPathRec(binaryTree.root);
+//        treeProblems.printPathRootToLeaf(binarySearchTree);
+        treeProblems.printPathRec(binarySearchTree.root);
 
         TreeDFS treeDFS = new TreeDFS();
 
         System.out.println("Inorder Traversal");
-        treeDFS.Inorder(binaryTree.root);
+        treeDFS.Inorder(binarySearchTree.root);
         System.out.println("\nPreorder Traversal");
-        treeDFS.Preorder(binaryTree.root);
+        treeDFS.Preorder(binarySearchTree.root);
         System.out.println("\nPostorder Traversal");
-        treeDFS.Postorder(binaryTree.root);
+        treeDFS.Postorder(binarySearchTree.root);
 
         LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal();
         System.out.println("\nLevel Order Traversal");
-        levelOrderTraversal.levelOrder(binaryTree.root);
+        levelOrderTraversal.levelOrder(binarySearchTree.root);
         System.out.println("\nLevel Order Traversal In Tree Manner");
-        levelOrderTraversal.levelOrderInTreeManner(binaryTree.root);
+        levelOrderTraversal.levelOrderInTreeManner(binarySearchTree.root);
         System.out.println("\nLevel Order Traversal In Tree Manner Using Counter");
-        levelOrderTraversal.levelOrderUsingCounter(binaryTree.root);
+        levelOrderTraversal.levelOrderUsingCounter(binarySearchTree.root);
         System.out.println("\nLevel Order Traversal In Tree Manner Using Recursion");
-        levelOrderTraversal.printLevelOrder(binaryTree.root);
+        levelOrderTraversal.printLevelOrder(binarySearchTree.root);
 
 
         LeftRightView leftRightView = new LeftRightView();
 
         System.out.println("\nLeft View");
-        leftRightView.leftView(binaryTree.root,1);
+        leftRightView.leftView(binarySearchTree.root,1);
 
         System.out.println("\nRight View");
-        leftRightView.rightView(binaryTree.root,1);
+        leftRightView.rightView(binarySearchTree.root,1);
 
         TopBottomView topBottomView = new TopBottomView();
 
         System.out.println("\nTop View");
-        topBottomView.TopView(binaryTree.root);
+        topBottomView.TopView(binarySearchTree.root);
 
         System.out.println("\nBottom View");
-        topBottomView.BottomView(binaryTree.root);
+        topBottomView.BottomView(binarySearchTree.root);
 
         System.out.print("\nDiagonal View\n");
         DiagonalView diagonalView = new DiagonalView();
-        diagonalView.diagonal(binaryTree.root);
+        diagonalView.diagonal(binarySearchTree.root);
 
         System.out.print("Spiral View\n");
         SpiralView spiralView = new SpiralView();
-        spiralView.spiral(binaryTree.root);
+        spiralView.spiral(binarySearchTree.root);
 
 
         MirrorView mirrorView = new MirrorView();
         System.out.println("\nMirror View");
-        mirrorView.Mirror(binaryTree.root);
+        mirrorView.Mirror(binarySearchTree.root);
 
         LCA lca = new LCA();
         System.out.println("\nLowest Common Ancestor");
-        lca.lowestCommonAncestor(binaryTree.root,90,95);
+        lca.lowestCommonAncestor(binarySearchTree.root,90,95);
 
         InorderSuccessorPredeccessor inorderSuccessorPredeccessor = new InorderSuccessorPredeccessor();
 
         System.out.println("\nInorder Predeccessor");
-        inorderSuccessorPredeccessor.InorderPredeccessor(binaryTree.root,115);
+        inorderSuccessorPredeccessor.InorderPredeccessor(binarySearchTree.root,115);
 
         System.out.println("\nInorder successor");
-        inorderSuccessorPredeccessor.InorderSuccessor(binaryTree.root,95);
+        inorderSuccessorPredeccessor.InorderSuccessor(binarySearchTree.root,95);
 
 
     }
