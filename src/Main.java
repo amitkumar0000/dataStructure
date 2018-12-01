@@ -32,10 +32,10 @@ public class Main {
         System.out.println("Hello World!");
 
 
-//        arrayOperation();
+        arrayOperation();
 //        graphOperation();
 //        dpOperation();
-        TreeOperation();
+//        TreeOperation();
 //          SuffixPrefixOperation();
 //        createGraphDs();
 //        topologicalSortDemo();
@@ -304,7 +304,6 @@ public class Main {
         System.out.println("Largest Sum contiguous subarray(Kadane's Algo):: " + sumContNum.getLagestSumContNumberDP(b1));
 
 
-
         //2. Find the length of the non repeated numbers in an array.
         int c[] = {1, 2, 2, 3, 4, 5, 6, 2, 3};
         LengthofNonRepeatedNum nonRepeatedNum = new LengthofNonRepeatedNum();
@@ -387,6 +386,24 @@ public class Main {
         BiggestNumByArrangArray numByArrangArray = new BiggestNumByArrangArray();
         List r = Arrays.asList("3","30","34","5","4","9");
         System.out.println("Biggest no is :: " + numByArrangArray.biggestNumByArrangingArray(r));
+
+
+        //Rotate array  n times.
+        int s[] = {1,2,3,4,5,6,7};
+        ArrayRotation arrayRotation = new ArrayRotation();
+        arrayRotation.rotate(s,7,2);
+        // for right rotation rotate the array left for n-d times. n is size(array) d is rotation.
+
+        int s1[] =  {1,2,3,4,5,6,7};
+        arrayRotation.leftRotate(s1,7,2);
+
+        int s2[] =  {1,2,3,4,5,6,7};
+        arrayRotation.rightRotate(s2,7,2);
+
+        int t[] = {6,9,1,2,3,4,5};
+        arrayRotation.pairSumInRotateArray(t,10);
+
+
 
 
     }
