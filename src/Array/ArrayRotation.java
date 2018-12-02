@@ -56,12 +56,7 @@ public class ArrayRotation {
     }
 
     private void reverse(int a[], int s, int e){
-        while(s<e){
-            int t = a[s];
-            a[s] = a[e];
-            a[e] = t;
-            s++; e--;
-        }
+        ArrayArrange.rev(a, s, e);
     }
 
     //Find the pivot point from where next ele is less than prev ele.

@@ -403,6 +403,26 @@ public class Main {
         int t[] = {6,9,1,2,3,4,5};
         arrayRotation.pairSumInRotateArray(t,10);
 
+        ArrayArrange arrayArrange = new ArrayArrange();
+
+        int u[] ={-1,2,-3,4,5,6,-7,8,9};
+        arrayArrange.rearrangePosNegNum(u);
+        int u1[] ={-1,2,-3,4,5,6,-7,8,9};
+        arrayArrange.rearrangeInSingleTraverse(u1);
+
+        int v[] = {0,1,0,2,0,4,0,3,0,5,0,0,0};
+        arrayArrange.moveZero(v);
+        int v1[] = {0,1,0,2,0,4,0,3,0,5,0,0,0};
+        arrayArrange.moveZeroToEnd(v1);
+
+        int v2[]={2,1,5,6,3};
+        arrayArrange.minSwap(v2,3);
+
+        int v3[] = {1,1,0,0,0,0,1,1,0,0,1,1,0};
+        arrayArrange.minSwapOne(v3);
+
+        int v4[] = {12,21,32,42,52,62,72,82,92,10,11,12};
+        arrayArrange.arrangeInZigZag(v4);
 
 
 
