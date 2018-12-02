@@ -424,6 +424,8 @@ public class Main {
         int v4[] = {12,21,32,42,52,62,72,82,92,10,11,12};
         arrayArrange.arrangeInZigZag(v4);
 
+        arrayArrange.segEvenOdd(t);
+
 
 
     }

@@ -171,6 +171,21 @@ public class ArrayArrange {
         }
     }
 
+    public void segEvenOdd(int a[]){
+        int op=-1;
+        for(int i=0; i<a.length; i++){
+            if((a[i]&0x01) == 0){
+                int t = a[++op];
+                a[op]=a[i];
+                a[i]=t;
+            }
+        }
+        System.out.println("\n Array after even odd segregation -->" );
+        for(int i:a){
+            System.out.print(i+" ");
+        }
+    }
+
     private int min(int a,int b){
         return a>b?b:a;
     }
