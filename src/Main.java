@@ -12,6 +12,7 @@ import Graph.ShortestPath;
 import GraphDs.DijkstraAlgorithms;
 import GraphDs.MinimumSpanningTree;
 import GraphDs.TopologocalSort;
+import RandomProblem.BinaryNumberProblems;
 import StringsQues.StringProblems;
 import SuffixPrefix.KMPAlgorithms;
 import Tree.*;
@@ -32,7 +33,7 @@ public class Main {
         System.out.println("Hello World!");
 
 
-        arrayOperation();
+//        arrayOperation();
 //        graphOperation();
 //        dpOperation();
 //        TreeOperation();
@@ -47,6 +48,31 @@ public class Main {
 //        stringQuestion();
 
 //        impQuestion();
+
+        randomQuestion();
+
+    }
+
+    private static void randomQuestion() {
+        BinaryNumberProblems p = new BinaryNumberProblems();
+//        p.printNBinaryNumber(8);
+
+//        p.generateNBinaryNum(10);
+
+        char str1[] = new char[4];
+        str1[0] = '0';
+//        p.generateBinaryNumberofNlengthWithNo1stogether(str1,1,4);
+        char str[] = new char[4];
+        str[0] = '1';
+//        p.generateBinaryNumberofNlengthWithNo1stogether(str,1,4);
+
+        System.out.println("\n Binary num from pattern");
+        char[] str2 = "1??0?101".toCharArray();
+//        p.printBnFronPt(str2,0,str2.length);
+
+        p.printBnPt("1??0?101");
+
+
 
     }
 
