@@ -13,6 +13,7 @@ import GraphDs.DijkstraAlgorithms;
 import GraphDs.MinimumSpanningTree;
 import GraphDs.TopologocalSort;
 import RandomProblem.BinaryNumberProblems;
+import RandomProblem.LongestStringInDict;
 import StringsQues.StringProblems;
 import SuffixPrefix.KMPAlgorithms;
 import Tree.*;
@@ -24,6 +25,7 @@ import problems.StackMinProblems;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Vector;
 
 public class Main {
 
@@ -71,6 +73,15 @@ public class Main {
 //        p.printBnFronPt(str2,0,str2.length);
 
         p.printBnPt("1??0?101");
+
+        Vector<String> dict = new Vector<>();
+        dict.add("ale");
+        dict.add("apple");
+        dict.add("monkey");
+        dict.add("plea");
+
+        LongestStringInDict l = new LongestStringInDict();
+        l.findLongestString(dict,"abpcplea");
 
 
 

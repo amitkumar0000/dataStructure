@@ -1,0 +1,48 @@
+How HashMap Work Internally
+----------------------------
+Internally HashMap is array of Node.
+Class Node {
+    int hash;
+    K Key;
+    V value;
+    Node next;
+}
+
+Performance of HashMap
+====================
+Depends upon:- 1. Initial Capacity
+               2. Load Factor.
+                    Load Factor is a measure when rehashing will happen. Rehashing means increasing the capacity.
+                    Its values varies between 0 to 1.
+
+Hashing Get and Put Method
+----------------------------
+Put method
+-----------
+  1.Calculate HashCode of Key say 118
+  2. Calculate index by index method  e.g  index = hashcode(key) & n-1   n=16   index will be 6
+  3.create a node object
+  node{
+    hashcode = 118
+    key
+    value
+    node next = null
+  }
+  4. place the node object at index 6 . if no object is present add this.
+     if object is present
+        check key are same via hashcode and equal method
+            if key are same then replace the object value.
+            else connect the object as linked list
+
+Get Method
+-----------
+  1. Calculate hashcode of key. say hashcode 118
+  2. Calculate index by index method  e.g index = hashcode(key) & n-1 n=16 index=6
+  3. Go to index 6. if key is same return the value.
+    else check the next object in linked-list
+
+
+
+
+
+
