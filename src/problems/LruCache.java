@@ -1,7 +1,16 @@
 package problems;
 
 import java.util.HashMap;
-
+/*
+Lru Cache is implemented via DoubleLinkedList and HashMap
+HashMap gives position of node in 0(1) times.
+Insertion in tail takes 0(1) times.
+Deletion from head takes 0(1) times.
+In  Node Access
+    HashMap give position in 0(1) times.
+    Delete that node in 0(1) times.
+    Insert that node in tail takes 0(1) times.
+ */
 public class LruCache {
 
     Node head, tail;
