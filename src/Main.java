@@ -21,6 +21,7 @@ import Tree.checkingPrinting.CheckingPrinting;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
 import Tree.traversal.DifferentTreeView.*;
+import problems.LruCache;
 import problems.StackMinProblems;
 
 import java.util.Arrays;
@@ -51,8 +52,27 @@ public class Main {
 
 //        impQuestion();
 
-        randomQuestion();
+//        randomQuestion();
 
+        LruCache();
+
+    }
+
+    private   static void LruCache(){
+        LruCache cache = new LruCache();
+
+        cache.insertion(1);
+        cache.insertion(2);
+        cache.insertion(3);
+        cache.insertion(4);
+        cache.insertion(5);
+        cache.insertion(6);
+
+        cache.delete();
+
+        cache.access(4);
+
+        System.out.println("==== LRUCache Done ===");
     }
 
     private static void randomQuestion() {
