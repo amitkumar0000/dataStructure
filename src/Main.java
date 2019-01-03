@@ -21,10 +21,12 @@ import Tree.checkingPrinting.CheckingPrinting;
 import Tree.traversal.BFS.LevelOrderTraversal;
 import Tree.traversal.DFS.TreeDFS;
 import Tree.traversal.DifferentTreeView.*;
+import linkedlist.LinkedListClass;
 import problems.LruCache;
 import problems.StackMinProblems;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 
@@ -37,28 +39,44 @@ public class Main {
 
 
 //        arrayOperation();
+          linkedListOperation();
 //        graphOperation();
 //        dpOperation();
 //        TreeOperation();
-//          SuffixPrefixOperation();
+//        SuffixPrefixOperation();
 //        createGraphDs();
 //        topologicalSortDemo();
 //        binaryHeap();
 //        dijkstraAlgorithms();
 //        disjointSetOperation();
 //        minimumSpanningTree();
-
 //        stringQuestion();
-
 //        impQuestion();
-
 //        randomQuestion();
-
-        LruCache();
+//        LruCache();
 
     }
 
-    private   static void LruCache(){
+    private static void linkedListOperation(){
+        LinkedListClass linkedList = new LinkedListClass();
+        linkedList.add(10);
+        linkedList.add(20);
+        linkedList.add(30);
+        linkedList.add(40);
+        linkedList.add(50);
+
+        linkedList.attachRandomPointer(1,30);
+        linkedList.attachRandomPointer(2,10);
+        linkedList.attachRandomPointer(3,50);
+        linkedList.attachRandomPointer(4,30);
+        linkedList.attachRandomPointer(5,20);
+
+
+        linkedList.printlinkedlist();
+
+        linkedList.cloneLinkedListWithRandomPointer();
+    }
+    private static void LruCache(){
         LruCache cache = new LruCache();
 
         cache.insertion(1);
@@ -74,7 +92,6 @@ public class Main {
 
         System.out.println("==== LRUCache Done ===");
     }
-
     private static void randomQuestion() {
         BinaryNumberProblems p = new BinaryNumberProblems();
 //        p.printNBinaryNumber(8);
@@ -106,7 +123,6 @@ public class Main {
 
 
     }
-
     private static void impQuestion() {
 
         StackMinProblems stackMinProblems = new StackMinProblems();
@@ -136,7 +152,6 @@ public class Main {
 
 
     }
-
     private static void stringQuestion() {
         StringProblems sp = new StringProblems();
         String str = "25 + 3 - 2 * 11";
@@ -166,7 +181,6 @@ public class Main {
 
 
     }
-
     private static void TreeOperation() {
 //        TrieOperation();
 
@@ -176,7 +190,6 @@ public class Main {
 
 
     }
-
     private static void CheckingAndPrinting() {
 
         BinaryTree binaryTree = new BinaryTree();
@@ -200,11 +213,9 @@ public class Main {
 
 
     }
-
     private static void SuffixPrefixOperation() {
         KMPAlgorithmsOperation();
     }
-
     private static void KMPAlgorithmsOperation() {
         KMPAlgorithms kmpAlgorithms = new KMPAlgorithms();
         String str = "abcxabcdabxababcdabcdabcy";
@@ -212,7 +223,6 @@ public class Main {
         System.out.println("Substring "+ pat+" is present ::" +
                 kmpAlgorithms.normalSubString(str,pat)+ " in "+str);
     }
-
     private static void BinaryTreeOPeration() {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
 
@@ -482,6 +492,14 @@ public class Main {
         arrayArrange.arrangeInZigZag(v4);
 
         arrayArrange.segEvenOdd(t);
+
+
+        // Count total distinct pair sum present in array
+        int w0[] = {1, 2, 3, 5, 10};
+        int w1[] = {1, 5, 6, 4, -1, 5};
+        CountDistinctPair distinctPair = new CountDistinctPair();
+        System.out.println("\nTotal distinct pair:: "+ distinctPair.countPair(w0) );
+        System.out.println("\nTotal distinct pair:: "+ distinctPair.countPair(w1) );
 
 
 
