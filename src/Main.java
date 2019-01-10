@@ -38,8 +38,8 @@ public class Main {
         System.out.println("Hello World!");
 
 
-//        arrayOperation();
-          linkedListOperation();
+        arrayOperation();
+//        linkedListOperation();
 //        graphOperation();
 //        dpOperation();
 //        TreeOperation();
@@ -500,6 +500,14 @@ public class Main {
         CountDistinctPair distinctPair = new CountDistinctPair();
         System.out.println("\nTotal distinct pair:: "+ distinctPair.countPair(w0) );
         System.out.println("\nTotal distinct pair:: "+ distinctPair.countPair(w1) );
+
+
+        // Next Greater num
+
+        NextGreaterNum nextGreaterNum = new NextGreaterNum();
+        System.out.println("Next Greater num:- "+nextGreaterNum.nextGreaterNum(534976));
+        System.out.println("Next Greater num:- "+nextGreaterNum.nextGreaterNum(4321));
+        System.out.println("Next Greater num:- "+nextGreaterNum.nextGreaterNum(4231));
 
 
 
